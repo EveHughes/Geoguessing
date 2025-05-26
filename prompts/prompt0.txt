@@ -1,0 +1,1 @@
+Guess the location in this photo. Respond with the location followed by a "|", and reasoning for your decision.
