@@ -9,8 +9,8 @@ with open('key.txt', 'r') as file:
 #empty images list
 images = []
 #encodes images to base64 and adds to list
-def get_images():
-    for i in range(2):
+def get_images(number_images):
+    for i in range(number_images):
         image_path = Path(__file__).parent / ("images/image" + str(i) + ".jpg")
         with open(image_path, "rb") as image_file:
             images.append(base64.b64encode(image_file.read()).decode('utf-8'))
@@ -18,8 +18,8 @@ def get_images():
 #empty prompts list
 prompts = []
 #reads in geoguessr prompts and adds to list
-def read_prompts():
-    for i in range(2):
+def read_prompts(number_prompts):
+    for i in range(number_prompts):
         file_path = Path(__file__).parent / ("prompts/prompt" + str(i) + ".txt")
         with open(file_path, "r", encoding="utf-8") as f:
             rubric_text = f.read()
@@ -46,7 +46,7 @@ def guess():
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": f"data:image/jpeg;base64,{images[1]}"
+                                "url": f"data:image/jpeg;base64,{images[0]}"
                             }
                         }
                     ]
@@ -58,8 +58,9 @@ def guess():
     return responses
 
 if __name__ == "__main__":
-    read_prompts()
-    get_images()
+    read_prompts(3)
+    get_images(2)
     guesses = guess()
     print(guesses[0])
     print(guesses[1])
+    print(guesses[2])
