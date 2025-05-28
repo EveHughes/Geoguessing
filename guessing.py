@@ -46,7 +46,7 @@ def guess():
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": f"data:image/jpeg;base64,{images[2]}"
+                                "url": f"data:image/jpeg;base64,{images[3]}"
                             }
                         }
                     ]
@@ -59,6 +59,6 @@ def guess():
     return responses
 
 if __name__ == "__main__":
-    read_prompts(3)
+    read_prompts(4)
     get_images(6)
     guesses = guess()

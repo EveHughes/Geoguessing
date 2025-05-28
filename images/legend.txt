@@ -1,0 +1,6 @@
+image 0: Tianducheng, China
+image 1: Adirondack Mountains, New York, United States
+image 2: Toronto, Ontario, Canada
+image 3: Louisville, Kentucky, United States
+image 4: Niagra Falls, Ontario, Canada
+image 5: Provincetown, Massachussets, United States
