@@ -46,21 +46,19 @@ def guess():
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": f"data:image/jpeg;base64,{images[0]}"
+                                "url": f"data:image/jpeg;base64,{images[2]}"
                             }
                         }
                     ]
                 }
             ],
-            max_tokens = 300
+            max_tokens = 400
         )
+        print(response.choices[0].message.content)
         responses.append(response.choices[0].message.content)
     return responses
 
 if __name__ == "__main__":
     read_prompts(3)
-    get_images(2)
+    get_images(6)
     guesses = guess()
-    print(guesses[0])
-    print(guesses[1])
-    print(guesses[2])
